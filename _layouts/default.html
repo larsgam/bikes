@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title }} — {{ site.title }}</title>
+  <meta name="description" content="{{ site.description }}">
+  <style>
+    :root { --navy: #003F63; --blue: #0072AA; --text: #424242;
+            --line: #9E9E9E; --bg: #F7FAFD; }
+    * { box-sizing: border-box; }
+    body { font-family: "Segoe UI", Arial, sans-serif; color: var(--text);
+           margin: 0; background: #FFFFFF; line-height: 1.6; }
+    header { border-bottom: 3px solid var(--navy); background: var(--bg); }
+    .head-inner { max-width: 800px; margin: 0 auto; padding: 14px 20px;
+                  display: flex; align-items: baseline; gap: 14px; }
+    header a { color: var(--navy); text-decoration: none; font-weight: 700;
+               font-size: 18px; }
+    header span { color: var(--line); font-size: 12px; }
+    main { max-width: 800px; margin: 0 auto; padding: 24px 20px 40px; }
+    h1 { color: var(--navy); font-size: 26px; margin: 10px 0 6px; }
+    h2 { color: var(--navy); font-size: 17px; margin-top: 28px; }
+    a { color: var(--blue); }
+    .back { font-size: 13px; }
+    .card { display: block; border: 1.5px solid var(--navy); border-radius: 12px;
+            padding: 16px 20px; margin: 14px 0; text-decoration: none;
+            background: var(--bg); }
+    .card:hover { background: #EDF4FA; }
+    .card b { color: var(--navy); font-size: 16px; }
+    .card p { margin: 6px 0 0; color: var(--text); font-size: 13.5px; }
+    footer { max-width: 800px; margin: 0 auto; padding: 14px 20px 30px;
+             font-size: 11px; color: var(--line);
+             border-top: 1px solid #EEEEEE; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="head-inner">
+      <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
+      <span>{{ site.description }}</span>
+    </div>
+  </header>
+  <main>
+    {% if page.url != '/' %}<p class="back"><a href="{{ '/' | relative_url }}">&larr; Back</a></p>{% endif %}
+    {{ content }}
+  </main>
+  <footer>
+    Data from manufacturer geometry charts and independent lab tests, verified
+    with sources &middot; geometry changes between model generations &mdash;
+    always check the current chart before buying &middot; built with Claude Code.
+  </footer>
+</body>
+</html>

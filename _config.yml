@@ -1,0 +1,11 @@
+title: Bikes
+description: Interactive tools for comparing bicycle frame geometry, character and specs
+baseurl: /bikes
+url: https://larsgam.github.io
+
+markdown: kramdown
+
+exclude:
+  - .claude
+  - README.md
+  - LICENSE
